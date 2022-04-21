@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deptest1
+  labels:
+    app: myapp1
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: myapp1
+  template:
+    metadata:
+      labels:
+        app: myapp1
+    spec:
+      containers:
+      - name: iptest
+        image: arshad789/test:latest
+        ports:
+        - containerPort: 80
+
+
